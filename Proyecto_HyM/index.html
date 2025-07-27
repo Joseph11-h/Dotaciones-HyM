@@ -3,53 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
     <title>Dotaciones HyM</title>
 </head>
 <body>
     <header>
         <section class="bloque1">
-            <nav class="bloque1__logo">
-                <img src="" alt="">
+            <nav class="cajita logo">
+                <img src="img/iconos/Logo.png" alt="DotacionesHyM" >
+                <p>Dotaciones <br>HyM sas</p>
             </nav>
-            <nav class="bloque1__buscador">
+            <nav class="cajita buscador">
                 <label for="buscar">
                     <input type="search" id="buscar" name="buscar" placeholder="Buscar...">
                     <button type="submit"><img src="img/iconos/buscar.png" alt="buscar" width="10"></button>
                 </label>
             </nav>
-            <nav class="bloque1__despleglable">
-                <figure>
-                    <img src="img/iconos/Menu.png" alt="" width="20">
-                </figure>
+            <nav class="cajita desplegable">
+                <img src="img/iconos/Menu.png" alt="menu" width="30px">
             </nav>
         </section>
         <section class="bloque2">
-            <nav class="bloque2__servicios"><a href="dotaciones.html">Dotaciones</a></nav>
-            <nav class="bloque2__servicios"><a href="fereteria.html">Ferreteria</a></nav>
-            <nav class="bloque2__servicios"><a href="corresponsal.html">Corresponsal</a></nav>
-            <nav class="bloque2__servicios"><a href="droop.html">Droop Coordinadora</a></nav>
+            <nav class="caja" id="dotacionesm"><a class="bloque2 servicios" href="dotaciones.html">Dotaciones</a></nav>
+            <nav class="caja"><a class="bloque2 servicios" href="fereteria.html">Ferreteria</a></nav>
+            <nav class="caja"><a class="bloque2 servicios" href="corresponsal.html">Corresponsal</a></nav>
+            <nav class="caja"><a class="bloque2 servicios" href="droop.html">Droop Coordinadora</a></nav>
         </section>
     </header>
     <main>
         <section class="contenedor">
-
+            <div class="riel">
+                <div class="riel__contenedor">
+                  <img src="img/iconos/riel.jpg" alt="Imagen 1">
+                  <img src="img/iconos/riel2.jpg" alt="Imagen 2">
+                  <img src="img/iconos/riel3.jpg" alt="Imagen 3">
+                </div>
+              </div>
         </section>
-        <section class="contenedor">
-            <section class="contenedor__servicios" id="dotaciones">
-                <img class="contenedor__servicios__imagen" src="" alt="">
-                <h3 class="contenedor__servicios__titulo"></h3>
+        <section class="contenedor1">
+            <section class="contenedor__servicios dotaciones">
+                <a href="dotaciones.html">
+                    <img src="img/iconos/Dotaciones.png" alt="DOtaciones">
+                    <h3>Venta de Dotacion</h3>
+                    <p>Uniformes, Pantalones, Camisas, Botas, Cascos, Guantes, Señalizacion</p>
+                </a>
             </section>
-            <section class="contenedor__servicios" id="ferreteria">
-                <img class="contenedor__servicios__imagen" src="" alt="">
-                <h3 class="contenedor__servicios__titulo"></h3>
+            <section class="contenedor__servicios ferreteria">
+                <a href="fereteria.html">
+                    <img  src="img/iconos/ferreteria.png" alt="Ferreteria">
+                    <h3>Ferreteria</h3>
+                    <p>Herramientas, Motores, Tornilleria</p>
+                </a>
             </section>
-            <section class="contenedor__servicios" id="corresponsal">
-                <img class="contenedor__servicios__imagen" src="" alt="">
-                <h3 class="contenedor__servicios__titulo"></h3>
+            <section class="contenedor__servicios corresponsal">
+                <a href="corresponsal.html">
+                    <img src="img/iconos/corresponsal.png" alt="">
+                    <h3>Corresponsal Banco de Bogota</h3>
+                    <p></p>
+                </a>
             </section>
-            <section class="contenedor__servicios" id="droop">
-                <img class="contenedor__servicios__imagen" src="" alt="">
-                <h3 class="contenedor__servicios__titulo"></h3>
+            <section class="contenedor__servicios droop">
+                <a href="droop.html">
+                    <img src="img/iconos/droop.png" alt="Droop">
+                    <h3></h3>
+                    <p></p>
+                </a>
             </section>
         </section>
     </main>
