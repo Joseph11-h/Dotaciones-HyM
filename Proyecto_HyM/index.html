@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/indexT.css" media="screen and (max-width: 1090px)">
+    <link rel="stylesheet" href="style/indexM.css" media="screen and (max-width: 566px)">
     <title>Dotaciones HyM</title>
 </head>
 <body>
@@ -15,11 +17,13 @@
                     <p>Dotaciones <br>HyM sas</p>
                 </nav>
             </nav>
-            <nav class="cajita2 buscador">
-                <label for="buscar">
-                    <input type="search" id="buscar" name="buscar" placeholder="Buscar...">
-                    <button type="submit"><img src="img/iconos/buscar.png" alt="buscar" width="10"></button>
-                </label>
+            <nav class="buscar-contenedor">
+                <div class="search-container">
+                    <button class="search-btn" id="searchBtn" type="submit">
+                    <img src="img/iconos/buscar.png" alt="">
+                    </button>
+                    <input type="text" id="searchInput" placeholder="Buscar...">
+                  </div>
             </nav>
             <nav class="cajita3 desplegable">
                 <img src="img/iconos/Menu.png" alt="menu" width="30px">
@@ -32,7 +36,63 @@
             <nav class="caja"><a class="bloque2 servicios" href="droop.html">Droop Coordinadora</a></nav>
         </section>
     </header>
-    <script src="finisher-header.es5.min.js" type="text/javascript"></script>
+    <main>
+        <section class="contenedor">
+            <button class="nav-btn prev" aria-label="Anterior">◀</button>
+            <div class="riel" id="rail">
+                <div class="riel__contenedor">
+                  <img src="img/iconos/riel.jpg" alt="Imagen 1">
+                  <img src="img/iconos/riel2.jpg" alt="Imagen 2">
+                  <img src="img/iconos/riel3.jpg" alt="Imagen 3">
+                </div>
+            </div>
+            <button class="nav-btn next" aria-label="Siguiente">▶</button>
+        </section>
+        <div class="dots" id="dots"></div>
+        <section class="contenedor1">
+            <section class="contenedor__servicios dotaciones">
+                <a href="dotaciones.html">
+                    <img src="img/iconos/Dotaciones.png" alt="DOtaciones">
+                    <h3>Venta de Dotacion</h3>
+                    <p>Uniformes, Pantalones, Camisas, Botas, Cascos, Guantes, Señalizacion</p>
+                </a>
+            </section>
+            <section class="contenedor__servicios ferreteria">
+                <a href="fereteria.html">
+                    <img  src="img/iconos/ferreteria.png" alt="Ferreteria">
+                    <h3>Ferreteria</h3>
+                    <p>Herramientas, Motores, Tornilleria</p>
+                </a>
+            </section>
+            <section class="contenedor__servicios corresponsal">
+                <a href="corresponsal.html">
+                    <img src="img/iconos/corresponsal.png" alt="">
+                    <h3>Corresponsal Banco de Bogota</h3>
+                    <p>Retiros, Consignaciones, Pago de Facturas</p>
+                </a>
+            </section>
+            <section class="contenedor__servicios droop">
+                <a href="droop.html">
+                    <img src="img/iconos/droop.png" alt="Droop">
+                    <h3>Droop Coordinadora</h3>
+                    <p>Envio y Reparto de Paqueteria</p>
+                </a>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <section id="contactos">
+            <a href="#"><img src="" alt="correo">CorreoElectronico@gmail.com</a>
+            <a href="#"><img src="" alt="numero">3123456789 / 3987654321</a>
+        </section>
+        <section id="redes">
+            <a href="#"><img src="img/iconos/" alt="WhatsApp">WhatsApp</a>
+            <a href="#"><img src="" alt="Facebook">Facebook</a>
+            <a href="#"><img src="" alt="Instagram">Instagram</a>
+            <a href="#"><img src="" alt="X">Twiter / X</a>
+        </section>
+    </footer>
+    <script src="/js/finisher-header.es5.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         new FinisherHeader({
           "count": 6,
@@ -69,59 +129,60 @@
             "c"
           ]
         });
+
+  const rail = document.getElementById('rail');
+  const imgs = rail.querySelectorAll('img');
+  const btnPrev = document.querySelector('.prev');
+  const btnNext = document.querySelector('.next');
+  const dotsContainer = document.getElementById('dots');
+
+  // Crear dots dinámicamente
+  imgs.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    dot.addEventListener('click', () => {
+      const pos = imgs[i].offsetLeft - rail.offsetLeft;
+      rail.scrollTo({ left: pos, behavior: 'smooth' });
+    });
+    dotsContainer.appendChild(dot);
+  });
+  const dots = dotsContainer.querySelectorAll('.dot');
+
+  // Actualizar dot activo
+  function updateDots() {
+    let activeIndex = 0;
+    let minDiff = Infinity;
+    const railRect = rail.getBoundingClientRect();
+    imgs.forEach((img, i) => {
+      const diff = Math.abs(img.getBoundingClientRect().left - railRect.left);
+      if (diff < minDiff) {
+        minDiff = diff;
+        activeIndex = i;
+      }
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
+  }
+
+  // Botones
+  btnNext.addEventListener('click', () => {
+    rail.scrollBy({ left: rail.clientWidth, behavior: 'smooth' });
+  });
+  btnPrev.addEventListener('click', () => {
+    rail.scrollBy({ left: -rail.clientWidth, behavior: 'smooth' });
+  });
+
+  // Actualiza cuando se hace scroll
+  rail.addEventListener('scroll', updateDots);
+  updateDots();
+  const searchBtn = document.getElementById('searchBtn');
+const searchInput = document.getElementById('searchInput');
+
+searchBtn.addEventListener('click', () => {
+  searchInput.classList.toggle('active');
+  if (searchInput.classList.contains('active')) {
+    searchInput.focus();
+  }
+});
         </script>
-    <main>
-        <section class="contenedor">
-            <div class="riel">
-                <div class="riel__contenedor">
-                  <img src="img/iconos/riel.jpg" alt="Imagen 1">
-                  <img src="img/iconos/riel2.jpg" alt="Imagen 2">
-                  <img src="img/iconos/riel3.jpg" alt="Imagen 3">
-                </div>
-              </div>
-        </section>
-        <section class="contenedor1">
-            <section class="contenedor__servicios dotaciones">
-                <a href="dotaciones.html">
-                    <img src="img/iconos/Dotaciones.png" alt="DOtaciones">
-                    <h3>Venta de Dotacion</h3>
-                    <p>Uniformes, Pantalones, Camisas, Botas, Cascos, Guantes, Señalizacion</p>
-                </a>
-            </section>
-            <section class="contenedor__servicios ferreteria">
-                <a href="fereteria.html">
-                    <img  src="img/iconos/ferreteria.png" alt="Ferreteria">
-                    <h3>Ferreteria</h3>
-                    <p>Herramientas, Motores, Tornilleria</p>
-                </a>
-            </section>
-            <section class="contenedor__servicios corresponsal">
-                <a href="corresponsal.html">
-                    <img src="img/iconos/corresponsal.png" alt="">
-                    <h3>Corresponsal Banco de Bogota</h3>
-                    <p></p>
-                </a>
-            </section>
-            <section class="contenedor__servicios droop">
-                <a href="droop.html">
-                    <img src="img/iconos/droop.png" alt="Droop">
-                    <h3></h3>
-                    <p></p>
-                </a>
-            </section>
-        </section>
-    </main>
-    <footer>
-        <section id="contactos">
-            <a href="#"><img src="" alt="correo">CorreoElectronico@gmail.com</a>
-            <a href="#"><img src="" alt="numero">3123456789 / 3987654321</a>
-        </section>
-        <section id="redes">
-            <a href="#"><img src="img/iconos/" alt="WhatsApp">WhatsApp</a>
-            <a href="#"><img src="" alt="Facebook">Facebook</a>
-            <a href="#"><img src="" alt="Instagram">Instagram</a>
-            <a href="#"><img src="" alt="X">Twiter / X</a>
-        </section>
-    </footer>
 </body>
 </html>

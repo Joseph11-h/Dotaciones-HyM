@@ -1,0 +1,9 @@
+#searchInput.active {
+    width: 200px;
+    opacity: 1;
+    margin-left: 8px;
+    margin-right: 0;
+}
+.riel {
+    height: auto;
+}
