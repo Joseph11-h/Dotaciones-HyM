@@ -1,154 +1,138 @@
-:root{
-    --color-primario: rgb(252, 145, 45);
-    --color-secundario: rgb(252, 231, 45);
-}
+
 body{
     margin: 0;
 }
 header{
-    border: 2px solid black;
-    background: linear-gradient(45deg,var(--color-primario),var(--color-secundario));
-    border-radius: 7px 7px 0 0;
+    height: 25vh;
 }
-
 .bloque1{
     display: flex;
-}
-.cajita{
     padding: 10px;
 }
-.logo{
+.navbar-toggler{
+    
+    margin-top: 0;
+}
+.cajita{
     width: 35%;
-    display: flex;   
+    display: flex;
+}
+.logo{
+    width: 260px;
+    height: 115px;
+    display: flex;  
 }
 .logo>img{
     width: 90px;
     height: 100px;
+    margin-top: 5px;
 }
 .logo>p{
     font-style: italic;
     font-display:swap;
 }
-.buscador{
-    width: 65%;
-}
-.desplegable{
-    width: 5%;
-    justify-content: right;
-}
+
 .logo > p{
     font-family:'Times New Roman', Times, serif;
     font-size: 30px;
 }
-.bloque2{
-    display: flex;
-  
+.navbar-toggler{
+    display: none;
 }
-.caja{
-    margin: 0;
-    width: 25%;
-    height: 40px;
-    border-left: 2px solid;
-    justify-content: center;
-}
-.caja:hover{
-    background-color: rgba(255, 255, 255, 0.096);
-}
+
 .servicios{
-    width: 95%;
-    height: 80%;
-    justify-content: center;
-    margin: 0px 4px px 8px;
-    padding: 10px;
+    width: 300px;
+    margin-right: 40px;
 }
-#dotacionesm{
-    border: none;
-}
+
+
 .servicios:hover{
-   color: orangered ;
+   color: rgb(255, 1, 1) ;
 }
 nav > a{
     text-decoration: none;
     color: black;
     padding: 5px;
 }
+main{
+    margin-top: 25vh;
+}
 .contenedor{
-    display: flex;
     width: 100%;
-    margin-top: 2%;
+    margin-top: 1%;
     margin-bottom: 2%;
-}
-.riel {
-    width: 100%;
-    overflow-x: auto;  
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; 
-}
-.riel::-webkit-scrollbar {
-    display: none;
-}
-.riel__contenedor {
-    display: flex;
-    gap: 10px;
-}
-  
-.riel__contenedor img {
-    flex: 0 0 auto;       
-    width: 300px;         
-    height: 200px;        
-    object-fit: cover;    
-    scroll-snap-align: center; 
-    border-radius: 10px; 
-}
-.contenedor__servicios{
-    background-color: wheat;
-    width: 200px;
-    border:2px solid black;
-    border-radius: 10px;
-    padding: 5px;
-    justify-self: center;
-}
-.contenedor1{
-    margin-top: 10px;
-    display:grid;
-    grid-template-columns: 49% 49%;
-    grid-template-columns: 49% 49%;
-    grid-template-areas: "dotaciones    ferreteria"
-                         "corresponsal  droop";
-    gap: 10px;
-    margin-bottom: 5%;
-}
-.dotaciones{
-    grid-area: dotaciones;
-    margin: 0 0 0 30%;
-}
-.ferreteria{
-    grid-area: ferreteria;
-    margin: 0 30% 0 0;
-}
-.corresponsal{
-    grid-area: corresponsal;
-    margin: 0 0 0 30%;
-}
-.droop{
-    grid-area: droop;
-    margin: 0 30% 0 0;
-}
-.contenedor__servicios>a{
-    text-decoration: none;
-    color: black;
-}
-.contenedor__servicios> a >img{
-    width: 200px;
-}
-.contenedor__servicios > a > h3{
-    background-color: antiquewhite;
-    justify-self: center;
-}
-.contenedor__servicios > a > p{
-    background-color: antiquewhite;
     justify-content: center;
 }
+.contenedor__tipos_dotacion{
+    border:2px solid rgba(73, 73, 73, 0.11);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+    justify-items: center;
+    justify-self: center;
+}
+.contenedor__tipos_dotacion:hover{
+    border:2px solid rgba(73, 73, 73, 0.856);
+}
+.contenedor__tipos_dotacion>a{
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    justify-content: center;
+}
+.contenedor__servicios> a >img{
+    justify-items: left;
+    width: 40%;
+    height: auto;
+}
+.contenedor__servicios > a > h3{
+    margin: 5px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.contenedor__servicios > a > p{
+    margin: 5px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.contenedor__servicios:hover{
+    border:3px solid rgba(73, 73, 73, 0.637);
+}
+.nosotros{
+    gap: 5px;
+}
 footer{
+    color: white;
     background-color: rgb(59, 56, 56);
+}
+footer > section > a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    border: 1px solud white;
+    width: 100%;
+    text-align: left;
+    margin: 5px;
+}
+.img{
+    width: 45px;
+}
+.informacion > p{
+    text-align: left;
+}
+@media (max-width:740px) {
+    .navbar-toggler{
+        display: flex;
+    }
+    .bloque2{
+        display: none;
+    }
+    .contenedor__servicios{
+        width: 100%;
+    }
+    .contenedor__servicios> a >img{
+        height: 100%;
+    }
 }

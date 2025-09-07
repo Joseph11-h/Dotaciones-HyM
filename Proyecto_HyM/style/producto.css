@@ -1,154 +1,217 @@
-:root{
-    --color-primario: rgb(252, 145, 45);
-    --color-secundario: rgb(252, 231, 45);
-}
-body{
-    margin: 0;
-}
-header{
-    border: 2px solid black;
-    background: linear-gradient(45deg,var(--color-primario),var(--color-secundario));
-    border-radius: 7px 7px 0 0;
+body {
+  margin: 0;
 }
 
-.bloque1{
+.bloque1 {
+  display: flex;
+  padding: 10px;
+}
+
+header {
+  height: 25vh;
+}
+
+.navbar-toggler {
+
+  margin-top: 0;
+}
+
+.cajita {
+  width: 35%;
+  display: flex;
+}
+
+.logo {
+  width: 260px;
+  height: 115px;
+  display: flex;
+}
+
+.logo>img {
+  width: 90px;
+  height: 100px;
+  margin-top: 5px;
+}
+
+.logo>p {
+  font-style: italic;
+  font-display: swap;
+}
+
+.logo>p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+.navbar-toggler {
+  display: none;
+}
+
+.servicios {
+  width: 300px;
+  margin-right: 40px;
+}
+
+
+.servicios:hover {
+  color: rgb(255, 1, 1);
+}
+
+.main {
+  display: flex;
+  margin-top: 150px;
+  justify-content: center;
+}
+
+nav>a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+}
+
+.card {
+  width: 60%;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  justify-content: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.descripcion {
+  text-align: left;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.linea {
+  height: 10px;
+  background: #eee;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.opciones {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.tallas span {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  margin: 3px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tallas span:hover,
+.tallas .active {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+
+.colores span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 3px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.colores span.active {
+  border: 3px solid black;
+}
+
+.cantidad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.cantidad button {
+  background: #ddd;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+.cantidad input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+}
+
+.precio {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.boton {
+  background: orange;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  background: orangered;
+}
+
+footer {
+  color: white;
+  background-color: rgb(59, 56, 56);
+}
+
+footer>section>a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  border: 1px solud white;
+  width: 100%;
+  text-align: left;
+  margin: 5px;
+}
+
+.img {
+  width: 45px;
+}
+
+.informacion>p {
+  text-align: left;
+}
+
+@media (max-width:740px) {
+  .navbar-toggler {
     display: flex;
-}
-.cajita{
-    padding: 10px;
-}
-.logo{
-    width: 35%;
-    display: flex;   
-}
-.logo>img{
-    width: 90px;
-    height: 100px;
-}
-.logo>p{
-    font-style: italic;
-    font-display:swap;
-}
-.buscador{
-    width: 65%;
-}
-.desplegable{
-    width: 5%;
-    justify-content: right;
-}
-.logo > p{
-    font-family:'Times New Roman', Times, serif;
-    font-size: 30px;
-}
-.bloque2{
-    display: flex;
-  
-}
-.caja{
-    margin: 0;
-    width: 25%;
-    height: 40px;
-    border-left: 2px solid;
-    justify-content: center;
-}
-.caja:hover{
-    background-color: rgba(255, 255, 255, 0.096);
-}
-.servicios{
-    width: 95%;
-    height: 80%;
-    justify-content: center;
-    margin: 0px 4px px 8px;
-    padding: 10px;
-}
-#dotacionesm{
-    border: none;
-}
-.servicios:hover{
-   color: orangered ;
-}
-nav > a{
-    text-decoration: none;
-    color: black;
-    padding: 5px;
-}
-.contenedor{
-    display: flex;
-    width: 100%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-.riel {
-    width: 100%;
-    overflow-x: auto;  
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; 
-}
-.riel::-webkit-scrollbar {
+  }
+
+  .bloque2 {
     display: none;
-}
-.riel__contenedor {
-    display: flex;
-    gap: 10px;
-}
-  
-.riel__contenedor img {
-    flex: 0 0 auto;       
-    width: 300px;         
-    height: 200px;        
-    object-fit: cover;    
-    scroll-snap-align: center; 
-    border-radius: 10px; 
-}
-.contenedor__servicios{
-    background-color: wheat;
-    width: 200px;
-    border:2px solid black;
-    border-radius: 10px;
-    padding: 5px;
-    justify-self: center;
-}
-.contenedor1{
-    margin-top: 10px;
-    display:grid;
-    grid-template-columns: 49% 49%;
-    grid-template-columns: 49% 49%;
-    grid-template-areas: "dotaciones    ferreteria"
-                         "corresponsal  droop";
-    gap: 10px;
-    margin-bottom: 5%;
-}
-.dotaciones{
-    grid-area: dotaciones;
-    margin: 0 0 0 30%;
-}
-.ferreteria{
-    grid-area: ferreteria;
-    margin: 0 30% 0 0;
-}
-.corresponsal{
-    grid-area: corresponsal;
-    margin: 0 0 0 30%;
-}
-.droop{
-    grid-area: droop;
-    margin: 0 30% 0 0;
-}
-.contenedor__servicios>a{
-    text-decoration: none;
-    color: black;
-}
-.contenedor__servicios> a >img{
-    width: 200px;
-}
-.contenedor__servicios > a > h3{
-    background-color: antiquewhite;
-    justify-self: center;
-}
-.contenedor__servicios > a > p{
-    background-color: antiquewhite;
-    justify-content: center;
-}
-footer{
-    background-color: rgb(59, 56, 56);
+  }
+
+  .card {
+    width: 100%;
+  }
 }

@@ -1,11 +1,11 @@
-:root{
-    --color-primario: rgb(255, 94, 1);
-    --color-secundario: rgb(255, 230, 0);
-}
+
 body{
     margin: 0;
 }
 
+header{
+    height: 25vh;
+}
 .bloque1{
     display: flex;
     padding: 10px;
@@ -22,8 +22,6 @@ body{
     width: 260px;
     height: 115px;
     display: flex;  
-    border: 2px solid black; 
-    border-radius: 15px;
 }
 .logo>img{
     width: 90px;
@@ -39,33 +37,16 @@ body{
     font-family:'Times New Roman', Times, serif;
     font-size: 30px;
 }
-.bloque2{
-    display: flex;
-    height: 30%;
+.navbar-toggler{
+    display: none;
 }
-.caja{
-    margin: 0;
-    width: 25%;
-    height: 40px;
-    border-left: 2px solid;
-    justify-content: center;
-}
-.caja:hover{
-    background-color: rgba(255, 255, 255, 0.096);
-}
-.carousel{
-    margin-top: 200px;
-}
+
 .servicios{
-    width: 95%;
-    height: 80%;
-    justify-content: center;
-    margin: 0px 4px px 8px;
-    padding: 10px;
+    width: 300px;
+    margin-right: 40px;
 }
-#dotacionesm{
-    border: none;
-}
+
+
 .servicios:hover{
    color: rgb(255, 1, 1) ;
 }
@@ -74,68 +55,102 @@ nav > a{
     color: black;
     padding: 5px;
 }
-
-.contenedor{
+main{
+    margin-top: 25vh;
     display: flex;
-    position: relative;
+    justify-content: center;
+}
+.carousel{
+    display: flex;
+    margin-top: 150px;
+    width: 80%;
+    height: 40%;
+    justify-content: center;
+    
+}
+.carousel-indicators{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
+.contenedor1{
     width: 100%;
-    margin-top: 1%;
+    margin-top: 2%;
     margin-bottom: 2%;
     justify-content: center;
 }
 .contenedor__servicios{
-    display: flex;
-    width: 200px;
+    width: 60%;
     border:2px solid rgba(73, 73, 73, 0.11);
     border-radius: 10px;
+    margin: 10px;
     padding: 5px;
     justify-items: center;
     justify-self: center;
 }
-.contenedor1{
-    margin-top: 10px;
-    display:grid;
-    grid-template-columns: 49% 49%;
-    grid-template-rows: 49% 49%;
-    grid-template-areas: "dotaciones    ferreteria"
-                         "corresponsal  droop";
-    gap: 10px;
-    margin-bottom: 5%;
-}
-.dotaciones{
-    grid-area: dotaciones;
-    margin: 0 0 0 30%;
-}
-.ferreteria{
-    grid-area: ferreteria;
-    margin: 0 30% 0 0;
-}
-.corresponsal{
-    grid-area: corresponsal;
-    margin: 0 0 0 30%;
-}
-.droop{
-    grid-area: droop;
-    margin: 0 30% 0 0;
-}
 .contenedor__servicios>a{
-    text-decoration: none;
+    display: flex;
+    padding: 10px;
     color: black;
+    text-decoration: none;
     justify-content: center;
 }
 .contenedor__servicios> a >img{
-    width: 150px;
-    margin-left: 13%;
+    justify-items: left;
+    width: 40%;
+    height: auto;
+    margin-right: 10px;
+    padding: 10px;
+    border-right: 1px solid rgb(73, 73, 73);
 }
 .contenedor__servicios > a > h3{
+    margin: 5px;
+    width: 100%;
     text-align: center;
+    justify-content: center;
 }
 .contenedor__servicios > a > p{
+    margin: 5px;
+    width: 100%;
     text-align: center;
+    justify-content: center;
 }
 .contenedor__servicios:hover{
-    border:3px solid rgba(73, 73, 73, 0.473);
+    border:2px solid rgba(73, 73, 73, 0.795);
+}
+.nosotros{
+    gap: 5px;
 }
 footer{
+    color: white;
     background-color: rgb(59, 56, 56);
+}
+footer > section > a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    border: 1px solud white;
+    width: 100%;
+    text-align: left;
+    margin: 5px;
+}
+.img{
+    width: 45px;
+}
+.informacion > p{
+    text-align: left;
+}
+@media (max-width:740px) {
+    .navbar-toggler{
+        display: flex;
+    }
+    .bloque2{
+        display: none;
+    }
+    .contenedor__servicios{
+        width: 100%;
+    }
+    .contenedor__servicios> a >img{
+        height: 100%;
+    }
 }
